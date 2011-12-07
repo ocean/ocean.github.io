@@ -1,4 +1,3 @@
-Pages
-=====
+# Pages
 
 This is for Github Pages.
