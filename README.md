@@ -1,4 +1,4 @@
-ocean.github.com
+ocean.github.io
 ================
 
 Pages
