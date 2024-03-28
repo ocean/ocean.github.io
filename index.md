@@ -1,1 +1,3 @@
-This is for [GitHub Pages](https://pages.github.com) for [@ocean](https://twitter.com/ocean).
+Still a work in progress ⚒️🪨🔨 ⚙️🔧
+
+Judge my code at [@ocean](https://github.com/ocean) if you wish.
