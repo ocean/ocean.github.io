@@ -48,6 +48,7 @@
       font-weight: 400;
       line-height: 1.6;
       text-align: center;
+      text-wrap: balance;
     }
 
     main {
@@ -64,6 +65,42 @@
       margin: 0;
       font-size: clamp(2.5rem, 9vw, 4rem);
       letter-spacing: 0.01em;
+    }
+
+    .intro {
+      margin: 1.5rem 0 0;
+      font-size: 1.2rem;
+    }
+
+    h2 {
+      margin: 4rem 0 1.5rem;
+      font-size: 0.85rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .projects {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .projects li + li { margin-top: 1.5rem; }
+
+    .projects a {
+      color: var(--fg);
+      font-size: 1.2rem;
+      font-weight: 600;
+      text-decoration-color: var(--muted);
+      text-underline-offset: 0.2em;
+    }
+
+    .projects a:hover { text-decoration-color: var(--fg); }
+
+    .projects p {
+      margin: 0.25rem 0 0;
+      color: var(--muted);
     }
 
     footer {
@@ -96,6 +133,23 @@
 <body>
   <main>
     <h1>drewr.dev</h1>
+    <p class="intro">Relentless pursuer of quality. Developer, technical tinkerer, open source maintainer.</p>
+
+    <h2>Projects</h2>
+    <ul class="projects">
+      <li>
+        <a href="https://github.com/ahoy-cli/ahoy">Ahoy</a>
+        <p>Give every project its own command line app, defined in YAML.</p>
+      </li>
+      <li>
+        <a href="https://fm-1.drewr.dev/">FM-1</a>
+        <p>Firmware, an app and a Swift library for the M-VAVE FM-1, a tiny synth.</p>
+      </li>
+      <li>
+        <a href="https://github.com/ocean/ecto_libsql">ecto_libsql</a>
+        <p>An Elixir Ecto adapter for libSQL and Turso, built with Rust.</p>
+      </li>
+    </ul>
   </main>
   <footer>
     <p><span class="group">Drew Robinson <a href="https://github.com/ocean">@ocean</a> 2026</span> <span class="sep sep--group" aria-hidden="true">&middot;</span> <span class="group"><a href="https://bsky.app/profile/drewr.dev">Bluesky</a> <span class="sep" aria-hidden="true">&middot;</span> <a href="https://mastodon.social/@ocean" rel="me">Mastodon</a></span></p>
