@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>drewr.dev</title>
+  <link rel="preload" href="assets/fonts/cooper-hewitt-600.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/cooper-hewitt-400.woff2" as="font" type="font/woff2" crossorigin>
+  <style>
+    @font-face {
+      font-family: "Cooper Hewitt";
+      src: url("assets/fonts/cooper-hewitt-400.woff2") format("woff2");
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: "Cooper Hewitt";
+      src: url("assets/fonts/cooper-hewitt-600.woff2") format("woff2");
+      font-weight: 600;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    :root {
+      --bg: #0a1530;
+      --fg: #f2ede3;
+      --muted: #8a93ab;
+    }
+
+    * { box-sizing: border-box; }
+
+    html, body {
+      margin: 0;
+      min-height: 100%;
+      background: var(--bg);
+      color: var(--fg);
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+      padding: 12vh 16px 2rem;
+      font-family: "Cooper Hewitt", "Helvetica Neue", Arial, sans-serif;
+      font-weight: 400;
+      line-height: 1.6;
+      text-align: center;
+    }
+
+    main {
+      width: 100%;
+      max-width: 36rem;
+    }
+
+    h1, h2, h3 {
+      font-weight: 600;
+      line-height: 1.2;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(2.5rem, 9vw, 4rem);
+      letter-spacing: 0.01em;
+    }
+
+    footer {
+      margin-top: auto;
+      padding-top: 4rem;
+      color: var(--muted);
+      font-size: 0.85rem;
+    }
+
+    footer p { margin: 0; }
+
+    footer .sep { margin: 0 0.3em; }
+
+    footer .group { white-space: nowrap; }
+
+    footer a {
+      color: inherit;
+      text-underline-offset: 0.15em;
+    }
+
+    footer a:hover { color: var(--fg); }
+
+    @media (max-width: 480px) {
+      footer .group { display: block; }
+      footer .group + .group { margin-top: 0.4rem; }
+      footer .sep--group { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>drewr.dev</h1>
+  </main>
+  <footer>
+    <p><span class="group">Drew Robinson <a href="https://github.com/ocean">@ocean</a> 2026</span> <span class="sep sep--group" aria-hidden="true">&middot;</span> <span class="group"><a href="https://bsky.app/profile/drewr.dev">Bluesky</a> <span class="sep" aria-hidden="true">&middot;</span> <a href="https://mastodon.social/@ocean" rel="me">Mastodon</a></span></p>
+  </footer>
+</body>
+</html>
