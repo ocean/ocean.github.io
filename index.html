@@ -38,6 +38,41 @@
       color: var(--fg);
     }
 
+    /* Soft glow behind the heading. */
+    body {
+      background:
+        radial-gradient(ellipse 70% 55% at 50% 0%, #17295a 0%, var(--bg) 70%)
+        var(--bg) no-repeat;
+    }
+
+    /* Faint graph-paper grid, fading out from the heading. */
+    body::before,
+    body::after {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+    }
+
+    body::before {
+      background-image:
+        linear-gradient(rgb(255 255 255 / 0.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgb(255 255 255 / 0.035) 1px, transparent 1px),
+        linear-gradient(rgb(255 255 255 / 0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgb(255 255 255 / 0.02) 1px, transparent 1px);
+      background-size: 160px 160px, 160px 160px, 32px 32px, 32px 32px;
+      background-position: center top;
+      mask-image: radial-gradient(ellipse 80% 70% at 50% 30%, #000 30%, transparent 100%);
+    }
+
+    /* Fine film grain over everything. */
+    body::after {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.5 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+      opacity: 0.1;
+    }
+
+    main, footer { position: relative; }
+
     body {
       display: flex;
       flex-direction: column;
