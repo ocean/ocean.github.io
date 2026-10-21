@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>drewr.dev</title>
+  <link rel="preload" href="assets/fonts/cooper-hewitt-600.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/cooper-hewitt-400.woff2" as="font" type="font/woff2" crossorigin>
+  <style>
+    @font-face {
+      font-family: "Cooper Hewitt";
+      src: url("assets/fonts/cooper-hewitt-400.woff2") format("woff2");
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: "Cooper Hewitt";
+      src: url("assets/fonts/cooper-hewitt-600.woff2") format("woff2");
+      font-weight: 600;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    :root {
+      --bg: #0a1530;
+      --fg: #f2ede3;
+      --muted: #8a93ab;
+    }
+
+    * { box-sizing: border-box; }
+
+    html, body {
+      margin: 0;
+      min-height: 100%;
+      background: var(--bg);
+      color: var(--fg);
+    }
+
+    /* Soft glow behind the heading. */
+    body {
+      background:
+        radial-gradient(ellipse 70% 55% at 50% 0%, #17295a 0%, var(--bg) 70%)
+        var(--bg) no-repeat;
+    }
+
+    /* Faint graph-paper grid, fading out from the heading. */
+    body::before,
+    body::after {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+    }
+
+    body::before {
+      background-image:
+        linear-gradient(rgb(255 255 255 / 0.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgb(255 255 255 / 0.035) 1px, transparent 1px),
+        linear-gradient(rgb(255 255 255 / 0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgb(255 255 255 / 0.02) 1px, transparent 1px);
+      background-size: 160px 160px, 160px 160px, 32px 32px, 32px 32px;
+      background-position: center top;
+      mask-image: radial-gradient(ellipse 80% 70% at 50% 30%, #000 30%, transparent 100%);
+    }
+
+    /* Fine film grain over everything. */
+    body::after {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.5 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+      opacity: 0.1;
+    }
+
+    main, footer { position: relative; }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+      padding: 12vh 16px 2rem;
+      font-family: "Cooper Hewitt", "Helvetica Neue", Arial, sans-serif;
+      font-weight: 400;
+      line-height: 1.6;
+      text-align: center;
+      text-wrap: balance;
+    }
+
+    main {
+      width: 100%;
+      max-width: 36rem;
+    }
+
+    h1, h2, h3 {
+      font-weight: 600;
+      line-height: 1.2;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(2.5rem, 9vw, 4rem);
+      letter-spacing: 0.01em;
+    }
+
+    .intro {
+      margin: 1.5rem 0 0;
+      font-size: 1.2rem;
+    }
+
+    h2 {
+      margin: 4rem 0 1.5rem;
+      font-size: 0.85rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .projects {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .projects li + li { margin-top: 1.5rem; }
+
+    .projects a {
+      color: var(--fg);
+      font-size: 1.2rem;
+      font-weight: 600;
+      text-decoration-color: var(--muted);
+      text-underline-offset: 0.2em;
+    }
+
+    .projects a:hover { text-decoration-color: var(--fg); }
+
+    .projects p {
+      margin: 0.25rem 0 0;
+      color: var(--muted);
+    }
+
+    footer {
+      margin-top: auto;
+      padding-top: 4rem;
+      color: var(--muted);
+      font-size: 0.85rem;
+    }
+
+    footer p { margin: 0; }
+
+    footer .sep { margin: 0 0.3em; }
+
+    footer .group { white-space: nowrap; }
+
+    footer a {
+      color: inherit;
+      text-underline-offset: 0.15em;
+    }
+
+    footer a:hover { color: var(--fg); }
+
+    @media (max-width: 480px) {
+      footer .group { display: block; }
+      footer .group + .group { margin-top: 0.4rem; }
+      footer .sep--group { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>drewr.dev</h1>
+    <p class="intro">Relentless pursuer of quality. Developer, technical tinkerer, open source maintainer.</p>
+
+    <h2>Projects</h2>
+    <ul class="projects">
+      <li>
+        <a href="https://github.com/ahoy-cli/ahoy">Ahoy</a>
+        <p>Give every project its own command line app, defined in YAML.</p>
+      </li>
+      <li>
+        <a href="https://fm-1.drewr.dev/">FM-1</a>
+        <p>Firmware, an app and a Swift library for the M-VAVE FM-1, a tiny synth.</p>
+      </li>
+      <li>
+        <a href="https://github.com/ocean/ecto_libsql">ecto_libsql</a>
+        <p>An Elixir Ecto adapter for libSQL and Turso, built with Rust.</p>
+      </li>
+    </ul>
+  </main>
+  <footer>
+    <p><span class="group">Drew Robinson <a href="https://github.com/ocean">@ocean</a> 2026</span> <span class="sep sep--group" aria-hidden="true">&middot;</span> <span class="group"><a href="https://bsky.app/profile/drewr.dev">Bluesky</a> <span class="sep" aria-hidden="true">&middot;</span> <a href="https://mastodon.social/@ocean" rel="me">Mastodon</a></span></p>
+  </footer>
+</body>
+</html>
